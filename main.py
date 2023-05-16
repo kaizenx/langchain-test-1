@@ -5,7 +5,7 @@ from langchain.llms import OpenAI
 from langchain.chains.conversation.memory import ConversationBufferMemory
 import os
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "SOME API"
 
 
 # Set maximum input size
@@ -21,7 +21,7 @@ SimpleWebPageReader = download_loader("SimpleWebPageReader")
 
 loader = SimpleWebPageReader()
 
-documents = loader.load_data(urls=["https://www.supa.so/about"])
+documents = loader.load_data(urls=["https://www.linkedin.com/in/tcwu78/"])
 
 # parser = SimpleNodeParser()
 # nodes = parser.get_nodes_from_documents(documents)
@@ -50,7 +50,7 @@ agent_chain = initialize_agent(
     tools, llm, agent="zero-shot-react-description", memory=memory
 )
 print("10")
-question = "Who is Mark?"
+question = "Who is Tzu Chjeh Wu?"
 output = agent_chain.run(input=question)
 print(question)
 print(output)
